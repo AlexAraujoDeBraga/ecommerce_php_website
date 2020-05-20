@@ -54,7 +54,8 @@ class Category extends Model {
 		$html = [];
 		
 		foreach ($categories as $row) {
-			array_push($html, '<li><a href="/categories/'.$row['idcategory'].'">'.$row['descategory'].'</a></li>');
+			
+			array_push($html, '<a class="dropdown-item" href="/categories/'.$row['idcategory'].'">'.$row['descategory'].'</a></br>');
 		}
 		file_put_contents($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "views" . DIRECTORY_SEPARATOR . "categories-menu.html", implode('', $html));
 	}

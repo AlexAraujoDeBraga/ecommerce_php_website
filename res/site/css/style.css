@@ -187,8 +187,66 @@ z-index: 999;}
     padding: 20px;
 }
 
+  
+.mainmenu-area ul.navbar-nav li.dropdown a.dropdown-item {
+    color: #6e6a6a;
+    background-color: #fff;
+    font-size: 14px;
+    padding: 10px;
+    display: inline-block;
+}
+
+/*list in list*/
+ /* Dropdown Button */
+.dropbtn {
+  background-color: #fbfbfb;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #fdd000;}
+ 
+/*list in list*/
+
 .mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {background: #fdd000; color:#fbfbfb;}
 .mainmenu-area .nav > li > a:focus {color: #FFF;}
+
+.mainmenu-area ul.navbar-nav li:hover a, .mainmenu-area ul.navbar-nav li.active a {background: #fdd000; color:#fbfbfb;}
+.mainmenu-area .nav > li > a:focus {color: #FFF;}
+
 
 .slider-area { width:80%; position:relative; margin:0 auto; padding:5px;}
 /*-------------------------
