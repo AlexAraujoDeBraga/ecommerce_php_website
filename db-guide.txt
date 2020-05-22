@@ -1,0 +1,28 @@
+
+//criando tabela para relacionar produtos e categorias
+
+CREATE TABLE db_ecommerce.tb_categoriesproducts (
+  `idcategory` int(11) NOT NULL,
+  `idproduct` int(11) NOT NULL,
+  PRIMARY KEY (`idcategory`,`idproduct`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+//selecionando os items de uma determinada categoria
+SELECT * FROM db_ecommerce.tb_products WHERE idproduct IN(
+
+SELECT a.idproduct
+FROM db_ecommerce.tb_products a 
+INNER JOIN db_ecommerce.tb_productscategories b ON a.idproduct = b.idproduct
+WHERE b.idcategory = 7
+
+);
+
+//selecionando os items não relacionados a determinada categoria
+SELECT * FROM db_ecommerce.tb_products WHERE idproduct NOT IN(
+
+SELECT a.idproduct
+FROM db_ecommerce.tb_products a 
+INNER JOIN db_ecommerce.tb_productscategories b ON a.idproduct = b.idproduct
+WHERE b.idcategory = 7
+
+);
