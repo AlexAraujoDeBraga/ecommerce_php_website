@@ -115,8 +115,7 @@ public static function listAll()
 
 	public function setPhoto($file)
 	{
-
-		$extension = explode('.', $file['name']);
+$extension = explode('.', $file['name']);
 		$extension = end($extension);
 
 		switch ($extension) {
