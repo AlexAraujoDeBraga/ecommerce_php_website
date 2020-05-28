@@ -13,6 +13,7 @@ class User extends Model {
 	const SECRET_IV = "LojaBraga_Secret_IV";
 	const ERROR = "UserError";
 	const ERROR_REGISTER = "UserErrorRegister";
+	const SUCCESS = "UserSuccess";
 
 
 	public static function getFromSession()
