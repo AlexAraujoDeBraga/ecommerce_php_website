@@ -6,6 +6,8 @@ use \LojaBraga\DB\Sql;
 use \LojaBraga\Model;
 use \LojaBraga\Model\Cart;
 
+
+
 class Order extends Model {
 
 	const SUCCESS = "Order-Success";
@@ -14,7 +16,7 @@ class Order extends Model {
 	public function save()
 	{
 
-		$sql = new Sql();	
+		$sql = new Sql();
 
 		$results = $sql->select("CALL sp_orders_save(:idorder, :idcart, :iduser, :idstatus, :idaddress, :vltotal)", [
 			':idorder'=>$this->getidorder(),
@@ -207,6 +209,6 @@ class Order extends Model {
 
 	}
 
-	
 }
+
 ?>

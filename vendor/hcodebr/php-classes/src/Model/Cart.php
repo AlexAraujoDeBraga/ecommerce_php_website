@@ -12,7 +12,7 @@ class Cart extends Model {
 	const SESSION = "Cart";
 	const SESSION_ERROR = "CartError";
 
-    public static function getFromSession()
+	public static function getFromSession()
 	{
 
 		$cart = new Cart();
@@ -209,8 +209,8 @@ class Cart extends Model {
 			$qs = http_build_query([
 				'nCdEmpresa'=>'',
 				'sDsSenha'=>'',
-				'nCdServico'=>'41106',
-				'sCepOrigem'=>'57061970',
+				'nCdServico'=>'40010',
+				'sCepOrigem'=>'09853120',
 				'sCepDestino'=>$nrzipcode,
 				'nVlPeso'=>$totals['vlweight'],
 				'nCdFormato'=>'1',
@@ -219,7 +219,7 @@ class Cart extends Model {
 				'nVlLargura'=>$totals['vlwidth'],
 				'nVlDiametro'=>'0',
 				'sCdMaoPropria'=>'S',
-				'nVlValorDeclarado'=>'50.00',
+				'nVlValorDeclarado'=>$totals['vlprice'],
 				'sCdAvisoRecebimento'=>'S'
 			]);
 
@@ -319,8 +319,5 @@ class Cart extends Model {
 	}
 
 }
-	
-	
 
-
-?>
+ ?>

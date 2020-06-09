@@ -29,7 +29,6 @@ class Address extends Model {
 
 	}
 
-	
 	public function loadFromCEP($nrcep)
 	{
 
@@ -100,5 +99,4 @@ class Address extends Model {
 
 }
 
-
-?>
+ ?>

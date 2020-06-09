@@ -8,29 +8,37 @@ use \LojaBraga\Mailer;
 
 class Category extends Model {
 
-
-	public static function listAll(){
+	public static function listAll()
+	{
 
 		$sql = new Sql();
+
 		return $sql->select("SELECT * FROM tb_categories ORDER BY descategory");
 
 	}
 
+	public function save()
+	{
 
-	public function save(){
 		$sql = new Sql();
+
 		$results = $sql->select("CALL sp_categories_save(:idcategory, :descategory)", array(
 			":idcategory"=>$this->getidcategory(),
 			":descategory"=>$this->getdescategory()
 		));
 
 		$this->setData($results[0]);
+
 		Category::updateFile();
+
 	}
 
-	public function get($idcategory){
+	public function get($idcategory)
+	{
+
 		$sql = new Sql();
-		$results = $sql->select("SELECT * FROM tb_categories WHERE idcategory = :idcategory",[
+
+		$results = $sql->select("SELECT * FROM tb_categories WHERE idcategory = :idcategory", [
 			':idcategory'=>$idcategory
 		]);
 
@@ -38,29 +46,34 @@ class Category extends Model {
 
 	}
 
-	public function delete(){
+	public function delete()
+	{
+
 		$sql = new Sql();
+
 		$sql->query("DELETE FROM tb_categories WHERE idcategory = :idcategory", [
 			':idcategory'=>$this->getidcategory()
 		]);
 
 		Category::updateFile();
+
 	}
 
-	public static function updateFile(){
+	public static function updateFile()
+	{
 
 		$categories = Category::listAll();
-		
+
 		$html = [];
-		
+
 		foreach ($categories as $row) {
-			
-			array_push($html, '<a class="dropdown-item" href="/categories/'.$row['idcategory'].'">'.$row['descategory'].'</a></br>');
+			array_push($html, '<li><a href="/categories/'.$row['idcategory'].'">'.$row['descategory'].'</a></li>');
 		}
+
 		file_put_contents($_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR . "views" . DIRECTORY_SEPARATOR . "categories-menu.html", implode('', $html));
+
 	}
 
-	
 	public function getProducts($related = true)
 	{
 
@@ -124,8 +137,8 @@ class Category extends Model {
 
 	}
 
-	public function addProduct(Product $product){
-
+	public function addProduct(Product $product)
+	{
 
 		$sql = new Sql();
 
@@ -135,9 +148,9 @@ class Category extends Model {
 		]);
 
 	}
-	
-	public function removeProduct(Product $product){
 
+	public function removeProduct(Product $product)
+	{
 
 		$sql = new Sql();
 
@@ -147,7 +160,7 @@ class Category extends Model {
 		]);
 
 	}
-
+			
 	public static function getPage($page = 1, $itemsPerPage = 10)
 	{
 
@@ -199,7 +212,6 @@ class Category extends Model {
 
 	}
 
-
 }
 
-?>
+ ?>

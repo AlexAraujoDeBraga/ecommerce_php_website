@@ -1,6 +1,4 @@
-<?php
-
-
+<?php 
 
 use \LojaBraga\Model\User;
 use \LojaBraga\Model\Cart;
@@ -59,5 +57,4 @@ function getCartVlSubTotal()
 
 }
 
-
-?>
+ ?>

@@ -9,16 +9,15 @@ use \LojaBraga\Mailer;
 class User extends Model {
 
 	const SESSION = "User";
-	const SECRET = "LojaBraga_Secret";
-	const SECRET_IV = "LojaBraga_Secret_IV";
+	const SECRET = "HcodePhp7_Secret";
+	const SECRET_IV = "HcodePhp7_Secret_IV";
 	const ERROR = "UserError";
 	const ERROR_REGISTER = "UserErrorRegister";
-	const SUCCESS = "UserSuccess";
-
+	const SUCCESS = "UserSucesss";
 
 	public static function getFromSession()
 	{
-	
+
 		$user = new User();
 
 		if (isset($_SESSION[User::SESSION]) && (int)$_SESSION[User::SESSION]['iduser'] > 0) {
@@ -244,15 +243,15 @@ class User extends Model {
 
 				if ($inadmin === true) {
 
-					$link = "http://www.lojabraga.com.br/admin/forgot/reset?code=$code";
+					$link = "http://www.hcodecommerce.com.br/admin/forgot/reset?code=$code";
 
 				} else {
 
-					$link = "http://www.lojabraga.com.br/forgot/reset?code=$code";
+					$link = "http://www.hcodecommerce.com.br/forgot/reset?code=$code";
 					
 				}				
 
-				$mailer = new Mailer($data['desemail'], $data['desperson'], "Redefinir senha da Loja Braga", "forgot", array(
+				$mailer = new Mailer($data['desemail'], $data['desperson'], "Redefinir senha da Hcode Store", "forgot", array(
 					"name"=>$data['desperson'],
 					"link"=>$link
 				));				
@@ -304,7 +303,7 @@ class User extends Model {
 
 	}
 	
-	public static function setForgotUsed($idrecovery)
+	public static function setFogotUsed($idrecovery)
 	{
 
 		$sql = new Sql();
@@ -501,4 +500,4 @@ class User extends Model {
 
 }
 
-?>
+ ?>

@@ -6,10 +6,10 @@ use \LojaBraga\DB\Sql;
 use \LojaBraga\Model;
 use \LojaBraga\Mailer;
 
+
 class Product extends Model {
 
-
-public static function listAll()
+	public static function listAll()
 	{
 
 		$sql = new Sql();
@@ -32,7 +32,6 @@ public static function listAll()
 		return $list;
 
 	}
-
 
 	public function save()
 	{
@@ -115,7 +114,8 @@ public static function listAll()
 
 	public function setPhoto($file)
 	{
-$extension = explode('.', $file['name']);
+
+		$extension = explode('.', $file['name']);
 		$extension = end($extension);
 
 		switch ($extension) {
@@ -228,8 +228,6 @@ $extension = explode('.', $file['name']);
 
 	}
 
-	
-	
 }
 
-?>
+ ?>
