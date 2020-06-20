@@ -1,5 +1,4 @@
-<?php if(!class_exists('Rain\Tpl')){exit;}?> 
-<div class="product-big-title-area">
+<?php if(!class_exists('Rain\Tpl')){exit;}?><div class="product-big-title-area">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -25,7 +24,7 @@
                 </div>
                 <?php } ?>
 
-                    
+
                 <form action="/login" id="login-form-wrap" class="login" method="post">
                     <h2>Acessar</h2>
                     <p class="form-row form-row-first">
@@ -51,6 +50,7 @@
                 </form>                    
             </div>
             <div class="col-md-6">
+                
                 <?php if( $errorRegister != '' ){ ?>
 
                 <div class="alert alert-danger">
@@ -58,6 +58,7 @@
 
                 </div>
                 <?php } ?>
+
 
                 <form id="register-form-wrap" action="/register" class="register" method="post">
                     <h2>Criar conta</h2>
