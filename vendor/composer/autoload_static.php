@@ -6,17 +6,47 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit2aa6b72471d4a5ad84482fbfac924e0e
 {
+    public static $files = array (
+        'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
+        'R' => 
+        array (
+            'React\\Promise\\' => 14,
+        ),
         'L' => 
         array (
             'LojaBraga\\' => 10,
         ),
+        'G' => 
+        array (
+            'GuzzleHttp\\Stream\\' => 18,
+            'GuzzleHttp\\Ring\\' => 16,
+            'GuzzleHttp\\' => 11,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'React\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/react/promise/src',
+        ),
         'LojaBraga\\' => 
         array (
             0 => __DIR__ . '/..' . '/hcodebr/php-classes/src',
+        ),
+        'GuzzleHttp\\Stream\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/streams/src',
+        ),
+        'GuzzleHttp\\Ring\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/ringphp/src',
+        ),
+        'GuzzleHttp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
     );
 
@@ -33,6 +63,13 @@ class ComposerStaticInit2aa6b72471d4a5ad84482fbfac924e0e
             'Rain' => 
             array (
                 0 => __DIR__ . '/..' . '/rain/raintpl/library',
+            ),
+        ),
+        'G' => 
+        array (
+            'Gerencianet' => 
+            array (
+                0 => __DIR__ . '/..' . '/gerencianet/gerencianet-sdk-php/src',
             ),
         ),
     );
